@@ -1,0 +1,58 @@
+
+tailwind jit mode start
+tailwind version- 3.1.8
+
+- open project folder
+
+- run "npm init -y" in vs terminal that create package.json file
+- crete new public folder & crete index.html in public
+
+- run "npm install -D tailwindcss@latest autoprefixer@latest postcss-cli@latest" or 
+	"npm install -D tailwindcss@3.1.8 autoprefixer@10.4.12 postcss-cli@10.0.0"
+	in vs terminal that create package-lock.json file, create node_modules
+	
+- crete style.css in  public folder 
+- add style.css external  css  in index.html
+- create tailwind.css file in project folder 
+
+- Add below three line in tailwind.css
+  @tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+	
+- run "npx tailwindcss init -p" in vscode terminal that create two file postcss.config.js,tailwind.config.js
+
+- open tailwind.config.js & update below text
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  mode: 'jit',
+  content: ['./public/**/*.html'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+-  open package.json js & update below text
+
+{
+  "name": "new_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "postcss tailwind.css -o ./public/style.css --w --verbose",
+    "prod": "NODE_ENV=prodution postcss tailwind.css -o ./public/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "postcss-cli": "^10.0.0",
+    "tailwindcss": "^3.1.8"
+  }
+}
+
+- then run in vs terminal "npm run build"
