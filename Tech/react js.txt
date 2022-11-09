@@ -1,0 +1,4 @@
+redux tutorial - 
+
+https://github.com/dmalvia/React_Redux_Tutorial
+https://www.youtube.com/watch?v=0W6i5LYKCSI&t=2145s
