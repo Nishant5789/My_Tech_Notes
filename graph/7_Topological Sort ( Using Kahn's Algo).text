@@ -1,0 +1,68 @@
+// int this program we use degree of vertex to find the topological sort (also we cinclude bfs)
+
+
+there are some information is useful for topological sort
+- topological sort is not an unique sort for graph. it means there are multiple topological sort are exits.
+- topological sort doesn't exits in directed cyclic graph . 
+why-
+https://user-images.githubusercontent.com/94158059/184290792-b13cb5ac-fff3-4e35-8cbb-23f94f1f2a48.png
+
+ link for solution - https://www.youtube.com/watch?v=Yh5o_PSK9to
+ 
+ psedo code
+ Algorithm: Steps involved in finding the topological ordering of a DAG: 
+ 
+Step-1: Compute in-degree (number of incoming edges) for each of the vertex present in the DAG and initialize the count of visited nodes as 0.
+Step-2: Pick all the vertices with in-degree as 0 and add them into a queue (Enqueue operation)
+Step-3: Remove a vertex from the queue (Dequeue operation) and then. 
+ - Decrease in-degree by 1 for all its neighbouring nodes.
+ - If the in-degree of neighbouring nodes is reduced to zero, then add it to the queue.
+Step 4: Repeat Step 3 until the queue is empty.
+
+
+vector<int> topologicalSort(vector<vector<int>> &edges, int v, int e)  {
+    // create an adjesentlist
+    unordered_map<int, list<int>> adj;
+    for(int i=0; i<e; i++)
+    {
+        int u=edges[i][0];
+        int v=edges[i][1];
+        
+        adj[u].push_back(v);
+    }
+    
+//     find all degrees
+    vector<int> indgree(v);
+    for(auto i:adj)
+    {
+        for(auto j: i.second)
+        {
+            indgree[j]++;
+        }
+    }
+    // 0 dgree walo ko push kardo;
+    queue<int> q;
+    for(int i=0; i<v; i++)
+    {
+        if(indgree[i] == 0)
+            q.push(i);
+    }
+    
+    // do bfs
+    vector<int> ans;
+    while(!q.empty())
+    {
+        int front=q.front();
+        q.pop();
+        // ans store
+        ans.push_back(front);
+        // neighbour indegree update
+        for(auto neighbour: adj[front])
+        {
+            indgree[neighbour]--;
+            if(indgree[neighbour] == 0)
+                q.push(neighbour);
+        }
+    }
+    return ans;
+}

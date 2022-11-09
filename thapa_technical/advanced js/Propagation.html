@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .outer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: blue;
+        height: 200px;
+        width: 300px;
+        margin-top: 200px;
+    }
+    .innner{
+        background-color: rgb(197, 25, 131);
+        height: 100px;
+        width: 100px;
+    }
+</style>
+<body>
+    <div class="outer" id="outer">
+        <div class="innner" id="inner">
+        </div>
+    </div>
+    <script>
+        const outer=document.getElementById('outer');
+        const inner=document.getElementById('inner');
+
+        const parentcall = ()=>{
+                alert('parent div')
+        }
+        const childcall = ()=>{
+                alert('child div')
+                // here we stop parent alert using 
+                event.stopPropagation();
+        }
+
+        // Bubbling phase- first it called child alert
+        outer.addEventListener('click', parentcall);
+        inner.addEventListener('click', childcall); 
+
+        // capturing phase
+        // first is callin parent aleart
+        // outer.addEventListener('click', parentcall, true);
+        // inner.addEventListener('click', childcall, true);
+    </script>
+</body>
+</html>

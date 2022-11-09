@@ -1,0 +1,68 @@
+
+
+here we use dfs algo 
+-we just only inlcude anoter map for storing the parent of neigbour when ever the called
+- after that we use end parent and according we find source and push the value them
+
+
+
+#include<bits/stdc++.h>
+vector<int> shortestPath( vector<pair<int,int>> edges , int n , int m, int s , int t)
+{
+    //unordered_map<int, list<int>> adj;
+    vector<vector<int> > ADJ(n+1);    
+
+    for(int i = 0 ; i < m ; i++ )
+    {
+        int X , Y;
+        X=edges[i].first;
+        Y=edges[i].second;
+        ADJ[X].push_back(Y);
+        ADJ[Y].push_back(X);
+    }
+    
+    // bfs
+    //  alternative for reduce time complexity
+    //  unordered_map<int, bool> visited;
+    //  unordered_map<int, int> parent;
+
+    vector<int> visited(n+1,-1);
+    vector<int> parent(n+1,-1);
+    visited[s]=1;
+    queue<int> Q;
+    Q.push(s);
+    
+    while(!Q.empty()) 
+    {
+       
+        int currentNode = Q.front();
+        Q.pop();
+        
+        for(int nextNode : ADJ[currentNode] ) 
+        {
+
+            if( visited[nextNode]==-1 ) 
+            {
+                visited[nextNode]=1;
+                Q.push(nextNode);
+                parent[nextNode]=currentNode;
+            }
+        }
+    }
+    vector<int> path;
+    int currentNode =  t;
+    
+    path.push_back(t);
+    
+    while(currentNode != s) 
+    {
+        currentNode = parent[currentNode];
+        path.push_back(currentNode);    
+    }
+
+    reverse(path.begin() , path.end());
+
+    return path;
+
+}
+

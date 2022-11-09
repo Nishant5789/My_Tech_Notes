@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+// code visulization link - https://www.youtube.com/watch?v=NdBHw5mqIZE
+// que link - https://codeforces.com/problemset/problem/295/B
+#define reb(i,m,n) for(int i=m; i<=n; i++)
+
+void solve(){
+    int n, m;
+    cin >> n >> m;
+    vector<vector<int>> dist(n+1 , vector<int> (n+1, INT_MAX));
+    reb(i,1,m)
+    {
+        int a, b, c;
+        cin >> a >> b >> c;
+        dist[a][b]=c;
+    }
+    reb(k,1,n)
+    {
+        reb(i,1,n)
+        {
+            reb(j,1,n)
+            {
+                if(dist[i][k]!=INT_MAX && dist[k][j]!=INT_MAX)
+                    dist[i][j]=min(dist[i][j], dist[i][k]+dist[k][j]);
+            }
+        }
+    }
+    reb(i,1,n)
+    {
+        reb(j,1,n)
+        {
+            if(dist[i][j]==INT_MAX)
+                cout << 'I' << " ";
+            else
+                cout << dist[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+int main(){
+   ios_base::sync_with_stdio(0);
+   cin.tie(0), cout.tie(0);
+
+   solve();
+   return 0;
+}

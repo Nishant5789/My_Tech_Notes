@@ -1,0 +1,87 @@
+
+
+// TWO oPTION (1) USING SET (2) PRIORITY QUEUE
+//
+
+psedo code
+
+1) Initialize distances of all vertices as infinite.
+2) Create an empty set.  Every item of set is a pair
+  (distance, vertex).
+3) Insert source vertex into the set and make its
+   distance as 0.
+4) While Set doesn't become empty, do following
+    a) Extract top vertex(pair<distance, node>) from the set;
+       Let the extracted vertex be u.
+    b) Loop through all adjacent of u and do 
+       following for every vertex v.
+
+           // If there is a shorter path to v
+           // through u. 
+           If dist[v] > dist[u] + distance(u, v)
+
+               (i) Update distance of v, i.e., do
+                     dist[v] = dist[u] + weight(u, v)
+               (i) If v is in set, update its distance
+                   in set by removing it first, then
+                   inserting with new distance
+               (ii) If v is not in set, then insert
+                    it in set with new distance     
+5) Print distance array dist[] to print all shortest
+   paths. 
+
+#include <bits/stdc++.h>
+vector<int> dijkstra(vector<vector<int>> &vec, int vertices, int edges, int source) {
+    // create an adjecency list
+    map<int, list<pair<int,int>>> adj;
+    for(int i=0; i<edges; i++)
+    {
+        int u=vec[i][0];
+        int v=vec[i][1];
+        int w=vec[i][2];
+        
+        adj[u].push_back(make_pair(v,w));
+        adj[v].push_back(make_pair(u,w));
+    }
+    // create of distance
+    vector<int> dist(vertices);
+    for(int i=0; i<vertices; i++)
+        dist[i]=INT_MAX;
+    
+        // cratinon of set on basis (distance, node)
+        set<pair<int,int>> st;
+        //intialize distance and set with source node
+        dist[source] = 0;
+        st.insert(make_pair(0, source));
+    
+    while(!st.empty())
+    {
+        // Fetch top record
+        auto top = *(st.begin());
+        
+        int nodeDistance= top.first;
+        int topnode= top.second;
+        
+        // remove top record now
+        st.erase(st.begin());
+        
+        // traverse an neighbours
+        for(auto neighbour : adj[topnode])
+        {
+            if(nodeDistance+neighbour.second < dist[neighbour.first])
+            {
+                auto record = st.find(make_pair(dist[neighbour.first], neighbour.first));
+                    // if record found then erse it
+                 if(record!=st.end())
+                 {
+                    st.erase(record);
+                 }
+                //distance update
+                dist[neighbour.first] = nodeDistance+neighbour.second;
+                //record push in set
+                st.insert(make_pair(dist[neighbour.first], neighbour.first));
+             }
+         }
+     }
+    return dist;
+}

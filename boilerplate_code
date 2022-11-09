@@ -1,0 +1,52 @@
+#include<bits/stdc++.h>
+using namespace std;
+template <typename T> //cin >> vector<T>
+istream &operator>> (istream &istream, vector<T> &v){
+ for(auto &it : v){
+ cin >> it;
+ }
+   return istream;
+}
+#define ll long long
+#define lli long long int
+#define reb(i,a,b) for(int i=a;i<b;i++)
+#define rec(i,a,b) for(int i=a;i>=b;i--)
+#define pb push_back
+#define mp makep_pair
+#define all(x) x.begin(), x.end()
+#define rall(x) x.rbegin(), x.rend()
+#define clr(x) memset(x, 0, sizeof(x))
+#define sortall(x) sort(all(x))
+#define tr(it, x) for(auto it = x.begin(); it != x.end(); it++)
+#define trr(it, x) for(auto it = x.rbegin(); it != x.rend(); it+)
+
+typedef vector<int> VI;
+typedef vector<string> VS;
+typedef pair<int, int> PII;
+typedef vector<pair<int, int>> VPII;
+typedef vector<PII> VII;
+typedef vector<VI> VVI;
+typedef map<int,int> MPII;
+typedef map<string, int> MPSI;
+typedef unordered_map<int,int> UMPII;
+typedef unordered_map<string,int> UMPSI;
+typedef set<int> SETI;
+typedef set<string> SETS;
+typedef multiset<int> MSETI;
+typedef unordered_set<string> USETS;
+typedef multiset<int> MSETI;
+
+void solve(){
+
+  }
+int main(){
+   ios_base::sync_with_stdio(0);
+   cin.tie(0), cout.tie(0);
+   
+   int t;
+   cin >> t;
+   while(t--){
+     solve();
+   }
+   // solve();
+   return 0;

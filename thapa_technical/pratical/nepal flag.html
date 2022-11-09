@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div id="container" class="flex justify-center">
+    </div>
+    <script>
+        const container = document.querySelector('#container');
+        // ajax call using XMLhttpsrequet
+        const request = new XMLHttpRequest();
+
+        request.open('GET',"https://restcountries.com/v2/name/nepal");
+        request.send();
+
+        // to get the responce
+        request.addEventListener('load', function () {
+            // watch full api in console
+            // console.log(this.responseText);
+            const [data] = JSON.parse(this.responseText);
+            // watch full api in pure object form use console
+            // console.log(data);
+
+            const htmlData =`
+            <div id="card" class="bg-yellow-500 w-96 mt-20 rounded-lg border-8 border-purple-600">
+            <article class="p-2">
+            <div class="flex flex-col my-4">
+               <img src="${data.flag}" alt="" class="w-28 mb-10 ml-28" >
+               <h1 class="text-center text-4xl pb-3 font-bold">${data.name}<h1>
+               <p class="text-xl pd-3 text-center font-semibold">Capital : ${data.capital}</p>
+            </div>
+            <hr><br>
+            <div class="flex space-x-4">
+               <div class="text-sm pl-6">
+                <p class="font-semibold">Native Language</p>
+                <h3 class="text-center font-semibold">${data.nativeName}</h3>
+               </div>
+               <div class="text-sm font-semibold">
+                <p>Population</p>
+                  <h3>${data.population}</h3>
+                </div> 
+                <div class="text-sm font-semibold">
+                <p>Demonym</p>
+                <h3>${data.demonym}</h3>
+                </div>
+            </div>
+            </article>
+        </div> 
+         `;  
+        container.insertAdjacentHTML("afterbegin",htmlData)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿AVL Tree
+Introduction - https://youtu.be/u3OVSkuOdqI  notes - https://simplesnippets.tech/what-is-avl-tree-data-structure-all-avl-operations-with-full-code/
+rotations  - https://youtu.be/_nyt5QYel3Q 
+Insertion - https://youtu.be/f0BplF93TIA
+Deletion - https://youtu.be/237XbN_FBfQ
+
+
+Red - Black tree
+Introduction - https://youtu.be/3RQtq7PDHog
+Insertion - https://youtu.be/qA02XWRTBdw
+Deletion - https://youtu.be/w5cvkTXY0vQ
+
+ M-way search tree & B-tree 
+Introduction - https://youtu.be/A9Uc2k12Fwc
+Insertion & Deletion -  https://youtu.be/P49yi5uiNZ0
+
+B-tree 
+introdution - https://youtu.be/Om0s3Ky0t98
+Insertion - https://www.youtube.com/watch?v=aNU9XYYCHu8
+deletion - https://www.youtube.com/watch?v=GKa_t7fF8o0
+
+How to implement B tree in database   
+https://youtu.be/aZjYr87r1b8

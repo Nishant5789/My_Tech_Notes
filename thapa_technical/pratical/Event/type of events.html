@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a href="#" class="" onclick="alert('I am awesome , But no one use me')">
+        <span class="button_text_container">
+            simple inline alert()
+        </span>
+        </a><br><br>
+
+
+        <a href="#" class="" onclick="fun()">
+        <span class="button_text_container">
+            by calling funtion 
+        </span>
+        </a><br><br>
+
+
+        <a href="#" class="">
+            <span class="button_text_container" id="thirdway">
+                inline evets
+            </span>
+        </a><br><br>
+
+        <a href="#" class="">
+            <span class="button_text_container" id="fouthway">
+                Event listener
+            </span>
+        </a>
+        <!-- events object -->
+        <br> <br>
+        <a href="#" class="">
+            <span class="button_text_container" id="eventListener">
+                events object
+            </span>
+        </a>
+    </div>
+    <script>
+        const fun =()=>
+        {
+            alert("most commmon way to writing the text");
+        }
+
+        // 3rd way
+
+        const thirdway = document.getElementById('thirdway');
+        thirdway.onclick=()=>
+        {
+            alert("third way to writing the text");
+        }
+        //    overide the property  check on console 
+        // thirdway.onclick=()=>
+        // {
+        //     console.log("third way to writing the text");
+        // }
+
+        // fougth way
+        const fouthway= document.querySelector('#fouthway');
+        
+        const fun1=() =>{
+            alert("third way to writing the text");
+        }
+        const fun2=() =>{
+            console.log("third way to writing the text");
+        }
+        fouthway.addEventListener('click', fun1);
+        // not overide the property check on console
+        // fouthway.addEventListener('click', fun2);
+
+
+        // events object 
+        
+        const eventListener= document.querySelector('#eventListener');
+
+        const fun3 = () =>
+        {
+            alert("we watch the object");
+            console.log(event);
+            console.log(event.target);
+            console.log(event.type);
+        }        
+        eventListener.addEventListener('click', fun3);
+    </script>
+</body>
+</html>

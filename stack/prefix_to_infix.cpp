@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+ 
+ // here this that remenber that here we use stack of string because
+// we need to add the bracket in exressin like "" ( exp ) "" so we need that
+
+bool isOperand(char x)
+{
+   return (x >= 'a' && x <= 'z') ||
+          (x >= 'A' && x <= 'Z');
+}
+ 
+// Get Infix for a given postfix
+// expression
+string getpreInfix(string exp)
+{
+    stack<string> s;
+
+    //if you want infix to post fix then simply 
+    // for(int i=0; i<n; i++) and change the op1 and op2 order
+    for (int i=exp.size()-1; exp[i]!='\0'; i--)
+    {
+        // Push operands
+        if (isOperand(exp[i]))
+        {
+           string op(1, exp[i]);
+           s.push(op);
+        }
+        // We assume that input is
+        // a valid postfix and expect
+        // an operator.
+        else
+        {
+            string op2 = s.top();
+            s.pop();
+            string op1 = s.top();
+            s.pop();
+            s.push("(" + op2 + exp[i] +
+                   op1 + ")");
+        }
+    }
+    // There must be a single element
+    // in stack now which is the required
+    // infix.
+    return s.top();
+}
+// Driver code
+int main()
+{
+    string exp = "*-AB/+CD*XY";
+    cout << getpreInfix(exp);
+    return 0;
+}

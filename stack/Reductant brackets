@@ -1,0 +1,41 @@
+Sample Input 2 :
+2
+(a*b+(c/d))
+((a/b))
+
+Sample Output 2 :
+No
+Yes
+
+bool findRedundantBrackets(string &s)
+{
+    stack<char> st;
+    for(int i=0; i<s.length(); i++) {
+        char ch =s[i];
+        if(ch == '(' || ch == '+' ||ch == '-' || ch == '*' || ch == '/') {
+            st.push(ch);
+        }
+        else
+        {
+            //ch ya toh ')' hai or lowercase letter
+            //avoiding the alphabets 
+            if(ch == ')')
+            {
+                bool isRedundant = true;
+                // why we use while loop because might be mutiple mathematical expression available is string 
+                while(st.top() != '(') {
+                    char top = st.top();
+                    if(top == '+' ||top == '-' || top == '*' || top == '/') {
+                        isRedundant = false;
+                    }
+                    st.pop();
+                }
+                if(isRedundant == true)
+                    return true;
+                st.pop();
+            }
+        } 
+    }
+    // why we not check stack.empty because we know that it an  valid mathematical expresion  
+    return false;
+}

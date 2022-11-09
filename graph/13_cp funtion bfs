@@ -1,0 +1,31 @@
+   
+     bool isvalid(int i, int j,int n,int m, vector<vector<int>> grid){
+        return i>=0 && j>=0 && i<n && j<m && grid[i][j]!=0;
+    }
+   
+   void bfs(vector<vector<int>> grid,vector<vector<int>> visited,vector<vector<int>> level, int n, int m, int count)
+    {
+        queue<pair<int,int>> q;
+        vector<pair<int,int>> movements ={{1,0},{0,1},{-1,0},{0,-1}};
+        while(!q.empty())
+        {
+             auto v = q.front();
+             q.pop();
+             int v_x = v.first;
+             int v_y = v.second;
+             
+             for(auto movement: movements)
+             {
+                int child_x = movement.first + v_x;
+                int child_y = movement.second + v_y;
+                 
+                if(!isvalid(child_x,child_y, n, m, grid)) continue;
+                if(visited[child_x][child_y]) continue;
+                 
+                q.push({child_x, child_y});
+                level[child_x][child_y] = level[v_x][v_y]+1;
+                visited[child_x][child_y]=1;
+             }
+        }
+        return
+    }

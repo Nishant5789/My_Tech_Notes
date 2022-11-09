@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Your name</label>
+    <input type="text" id="cric">
+    <br>
+    <label>choose your favourite cricketer
+        <!-- <select name="cricket" id="cricket" onchange="selectElement()"> -->
+            <!-- for event listner you use -->
+            <!-- onchage --- Execute a JavaScript when a user changes the selected option of a <select> element -->
+        <select name="cricket" id="cricket">
+        <option value="">select one</option>
+        <option value="Ab Delvilers">Ab Delvilers</option>
+        <option value="virat kohli">virat kohli</option>
+        <option value="Kane wiliamson">Kane wiliamson</option>
+        <option value="Joe Root">Joe Root</option>
+    </select>
+    </label>
+    <br><br><br>
+    <div id="result"></div>
+    <script>
+        // const selectElement = () =>{
+        //     // const cric =document.getElementById('cric').value;
+        //     // const cricket =document.getElementById('cricket').value;
+        //     // document.getElementById('result').innerHTML= `${cric} favourite cricketer is ${cricket}`;
+        //     // using event listner
+        // }
+        const cricket =document.getElementById('cricket');
+        cricket.addEventListener('click',()=>{
+        const cric =document.getElementById('cric').value;
+        const cricket =document.getElementById('cricket').value;
+
+        document.getElementById('result').innerHTML= `${cric} favourite cricketer is ${cricket}`;
+        });
+    </script>
+</body>
+</html>

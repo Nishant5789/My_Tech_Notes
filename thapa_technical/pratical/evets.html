@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p><b>setTimeout</b></p>
+        <p >If you want to know My name Name click Me</p>
+        <p id="showMyname"></p><br>
+        <button id="btn">click Me</button>
+
+        <!-- // clearTimeout -->
+
+        <br><p><b>cleartimeout</b></p>
+        <div>
+            <p>click "try it" wait 3 second the page will alert "hello</p>
+            <p>if you don't click "stop it" so after so you gave an alert</p>
+            <p>click "stop it" it's doesn't execute</p>
+        </div>
+
+        <button onclick="fun=setTimeout(myfun, 2000)">try it</button><br>
+        <button onclick="clearTimeout(fun)">stop it</button>
+    </div>
+
+    <br><p><b>setinterval</b></p>
+
+    <p id="text">can you stop me when i reach at 10</p>
+    <br>
+    <p></p>
+    <button id="btn2">start me</button>
+    <button id="btn3">stop me</button>
+
+    <script>
+    const showMyname = document.querySelector('#showMyname');
+    const btn = document.querySelector('#btn');
+    const Myname = () =>
+    {
+        showMyname.innerHTML="loading.."  
+        setTimeout(()=>{
+            showMyname.innerHTML="Nishant"   
+        },1000);
+    };
+    btn.addEventListener('click', Myname);
+    // cleartimout
+    function myfun()
+    {
+        alert("hello babe");
+    } 
+
+    // setinterval 
+    let num=0;
+    let timeref;
+    btn2 = document.getElementById('btn2')
+    btn3 = document.getElementById('btn3')
+    text = document.getElementById('text')
+    btn2.addEventListener('click', ()=>{
+        timeref = setInterval(()=>
+        {
+            text.innerHTML=`${num}`;
+            num++;
+        },1000)
+    });   
+    btn3.addEventListener('click', ()=>{
+        clearInterval(timeref)   
+    });
+</script>
+</body>
+</html>

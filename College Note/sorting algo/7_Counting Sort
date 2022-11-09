@@ -1,0 +1,42 @@
+part-1 Counting Sort Sorting Algorithm (Working with Diagram)
+https://www.youtube.com/watch?v=Rl2Ok_H-Qms&list=PLIY8eNdw5tW_zX3OCzX7NJ8bL1p6pWfgG&index=35
+
+part-2 Counting Sort Sorting Algorithm (C++ Program) |
+https://www.youtube.com/watch?v=lZ1HAbRgbz4&list=PLIY8eNdw5tW_zX3OCzX7NJ8bL1p6pWfgG&index=36
+
+link for docs - https://simplesnippets.tech/counting-sort-algorithm-with-cpp-code-sorting-algorithms-data-structures-algorithms/
+
+
+# include <iostream>
+using namespace std;
+// counting sort sorting algorithm
+void CountingSort(int input_array[],int size, int range)
+{
+	int output_array[size];
+	int count_array[range];
+	
+	
+	// initialize all elements to 0 in count array
+	for(int i=0;i<range;i++)
+		count_array[i]=0;
+		
+	// to take a count of all elements in the input array
+	for(int i=0;i<size;i++)
+		++count_array[input_array[i]];
+	
+	// cummulative count of count array to get the 
+	// positions of elements to be stored in the output array
+	for(int i=1;i<range;i++)
+		count_array[i]=count_array[i]+count_array[i-1];
+	
+	// placing input array elements into output array in proper
+	//  positions such that the result is a sorted array in ASC order
+	for(int i=0;i<size;i++)
+		output_array[--count_array[input_array[i]]] = input_array[i];
+	
+	// copy output array elements to input array
+	for(int i=0;i<size;i++)
+		input_array[i]=output_array[i];
+
+}
+

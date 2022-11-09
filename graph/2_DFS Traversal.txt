@@ -1,0 +1,44 @@
+ #include<unordered_map>
+ #include<queue>
+#include <list>
+void dfs(int node,unordered_map<int, bool> &visited,unordered_map<int, list<int>> &adj, vector<int> &componets)
+{
+    componets.push_back(node);
+    visited[node] = true;
+    
+    //for all conected node called recursive call
+    for(auto i: adj[node])
+    {
+        if(!visited[i])
+        {
+            dfs(i, visited, adj, componets);
+        }
+    }
+}
+
+vector<vector<int>> depthFirstSearch(int V, int E, vector<vector<int>> &edges)
+{
+    unordered_map<int, list<int>> adj;
+    vector<vector<int>> ans;
+    unordered_map<int, bool> visited;
+    // create adjcent list
+    for(int i=0; i<edges.size(); i++)
+    {
+        int u=edges[i][0];
+        int v=edges[i][1];
+        
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+    // check all node
+    for(int i=0; i<V; i++)
+    {
+        if(!visited[i])
+        {
+            vector<int> componets;
+            dfs(i, visited, adj, componets);
+            ans.push_back(componets);
+        }
+    }
+    return ans;
+}

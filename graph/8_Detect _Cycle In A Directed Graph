@@ -1,0 +1,66 @@
+
+
+int his code we use the topological sort (khan algo) to solve that code
+
+--topological sort only applicable for DAC .
+--as we know that we can't find the valid 
+topological sort using DCS(directed cycle graph).
+-- so if we apply in DCS so we get less NO of vertex in output.
+-- that logic we used here
+
+
+#include<unordered_map>
+#include<list>
+#include<queue>
+//tc- 0(n+edges)
+//sc- o(n)
+int detectCycleInDirectedGraph(int n, vector < pair < int, int >> & edges) 
+{
+        // create an adjesentlist
+    unordered_map<int, list<int>> adj;
+    for(int i=0; i<edges.size(); i++)
+    {
+        int u=edges[i].first-1;
+        int v=edges[i].second-1;
+        
+        adj[u].push_back(v);
+    }
+    
+//     find all degrees
+    vector<int> indgree(n);
+    for(auto i:adj)
+    {
+        for(auto j: i.second)
+        {
+            indgree[j]++;
+        }
+    }
+    // 0 dgree walo ko push kardo;
+    queue<int> q;
+    for(int i=0; i<n; i++)
+    {
+        if(indgree[i] == 0)
+            q.push(i);
+    }
+    
+    int cnt = 0;
+    while(!q.empty())
+    {
+        int front=q.front();
+        q.pop();
+           
+        cnt++;
+        
+        // neighbour indegree update
+        for(auto neighbour: adj[front])
+        {
+            indgree[neighbour]--;
+            if(indgree[neighbour] == 0)
+                q.push(neighbour);
+        }
+    }
+    if(cnt==n)
+        return false;
+    return true;
+
+}

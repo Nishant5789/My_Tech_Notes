@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con 
+        {
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <p id="myp" onmousedown="mouseDown()" onmouseup="mouseUp()">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate possimus obcaecati nesciunt consequuntur necessitatibus. Error molestiae ipsum excepturi earum in sit eligendi, distinctio sequi officiis, dolorem illo, beatae harum. Ducimus aspernatur nostrum quod consequuntur? Repudiandae eaque ullam, esse quidem possimus corporis ea, ad accusamus est ratione itaque explicabo reprehenderit id accusantium libero distinctio, iure fugiat repellendus.</p>
+
+    <!-- mouseleave mouseup -->
+
+    <div class="main-div">
+        <div id="box" class="con"></div>
+    </div>
+<script>
+    function mouseDown() {
+        document.getElementById('myp').style.color="#F8B627";
+    }
+    function mouseUp() {
+        document.getElementById('myp').style.color="#fff";
+    }
+
+    // mouseEnter & mouseleave
+    
+    const mEnter = document.getElementById('box');
+
+    mEnter.addEventListener('mouseenter', ()=>{
+        mEnter.style.backgroundColor = 'red';
+        console.log('Mouse Enter Bro');
+    });
+    mEnter.addEventListener('mouseleave', ()=>{
+        mEnter.style.backgroundColor = 'blue';
+        console.log('Mouse leave Bro');
+    });
+</script>
+</body>
+</html>
