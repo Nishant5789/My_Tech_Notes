@@ -1,14 +1,19 @@
 best respontry
 -- https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code
---https://github.com/PsVenom
+-- https://github.com/PsVenom
 
-resoucre
+Resoucre(Notes & book)
 Dbms- https://drive.google.com/drive/folders/1f5dmqV84E-BN1PiVWqUhNXzcVWkCbGPa
 java- https://drive.google.com/drive/folders/1IP7B7lhrRq6et72RGUVeLibe8yfvnq9i
 cpp - https://drive.google.com/drive/folders/1Solrbu_nqH72D8Pe-ZhSUB-5D9_Tt0He
 python - https://drive.google.com/drive/folders/1f_xPnU12D5Bs0D3yKrmZw2vVKt6qNeFs
 web - https://drive.google.com/drive/folders/1MrZVfTBmUeY18OFNMozBw7GhBdN1Fblb
 
+placement NOtes (apna college)
+OOPS - https://drive.google.com/file/d/1CljO4lsVcxLXj59X0OMBB5WNhG0fzVOw/view
+DBMS - https://docs.google.com/document/d/1KV-9I5D6iddJbAoDzPEBVR6izf-j_7PXq3JQSC7KC2Q/edit
+OS   - https://drive.google.com/file/d/1B_kmekdghu-sO8-eXZ1kc4Xx_YtB8BPM/view
+CN   - https://drive.google.com/file/d/1EraWa_yVfFHJqOMG2nG91fbg2g1FHm30/view
 
 
 
