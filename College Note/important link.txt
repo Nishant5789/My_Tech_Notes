@@ -3,11 +3,15 @@ best respontry
 -- https://github.com/PsVenom
 
 Resoucre(Notes & book)
+bul=ild own reasource - https://github.com/codecrafters-io/build-your-own-x
 Dbms- https://drive.google.com/drive/folders/1f5dmqV84E-BN1PiVWqUhNXzcVWkCbGPa
 java- https://drive.google.com/drive/folders/1IP7B7lhrRq6et72RGUVeLibe8yfvnq9i
 cpp - https://drive.google.com/drive/folders/1Solrbu_nqH72D8Pe-ZhSUB-5D9_Tt0He
 python - https://drive.google.com/drive/folders/1f_xPnU12D5Bs0D3yKrmZw2vVKt6qNeFs
 web - https://drive.google.com/drive/folders/1MrZVfTBmUeY18OFNMozBw7GhBdN1Fblb
+nodjes - https://drive.google.com/drive/folders/18p3MCVDoNeRUnUeGERQRiJB8DNqMuA4d
+reactjs - https://drive.google.com/drive/folders/1IBBJBL7_9ZeCngmiYWAcjh_lqLhmZ2EV
+web3 - https://drive.google.com/drive/folders/1oyGnZE2ce5t6MZ1ytMLDr5OKuQAOkEdR
 
 placement NOtes (apna college)
 OOPS - https://drive.google.com/file/d/1CljO4lsVcxLXj59X0OMBB5WNhG0fzVOw/view
@@ -18,8 +22,6 @@ CN   - https://drive.google.com/file/d/1EraWa_yVfFHJqOMG2nG91fbg2g1FHm30/view
 github links
 - (Build your own X)
 https://www.amazon.in/Nivea-Men-Moisturiser-Cream-75ml/dp/B01HD5S28Q/ref=sr_1_20?keywords=winter%2Bmoisturizer%2Bfor%2Bmen&qid=1670903928&sr=8-20&th=1
-
-
 
 
 
