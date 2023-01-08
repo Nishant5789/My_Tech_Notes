@@ -4,3 +4,9 @@ git remote -v
 git add .
 git commit -v "first commit"
 git push origin master
+
+'git status'   -   check the branch detail
+'git log --oneline'- commit history with branch
+
+---- directly push your master branch
+git push -f origin master
