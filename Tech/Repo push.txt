@@ -1,0 +1,6 @@
+git init
+git remote add origin <gitlint>
+git remote -v
+git add .
+git commit -v "first commit"
+git push origin master

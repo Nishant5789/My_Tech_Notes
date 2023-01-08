@@ -1,0 +1,68 @@
+- how to active virtual enviroment.
+open script folder & run "./activate" 
+
+- how to create app in project folder.
+open project folder and run "python manage.py startapp projectApp(ex-home)"
+
+ & register into deafault app setting.py
+
+- how to create migrate file
+run command in project file "python manage.py makemigrations" & "python manage.py migrate"
+
+- how to run template folder or override templates
+add template configure inside the default folder setting.py 
+add   'DIRS': [BASE_DIR / "template",],
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / "template",],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+- how to create superuser
+run commanr in project file "python manage.py createsuperuser".
+
+- How to create a modal
+    (1) first register a modal  (appfolder->modal.py)
+	ex - updatebelow
+	from django.db import models
+	# Create your models here.
+	class Contact(models.Model):
+    name = models.CharField(max_length=122)
+    email = models.EmailField(max_length=122)
+    message = models.TextField(max_length=122)
+    date = models.DateField()
+	
+	(2) then update (appfolder->admin.py)
+	EX - from django.contrib import admin
+	from home.models import Contact
+	# Register your models here.
+	admin.site.register(Contact)
+
+	
+	(2) then register app (projectfolder-> setting.py)
+	ex - update below
+	INSTALLED_APPS = [
+    'home.apps.HomeConfig',{HomeConfig (where to find->appfolder->apps.py->any classname) }
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+	]
+	(3) run "Python mange.py makemigrations"
+	
+	
+- Deal with   {% csrf_token %} token in forms
+
