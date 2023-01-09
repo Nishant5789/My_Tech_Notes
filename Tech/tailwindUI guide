@@ -1,6 +1,21 @@
-frame work
+
+code with harry for learn basic & pratic simple ui
+ - https://www.youtube.com/playlist?list=PLu0W_9lII9ahwFDuExCpPFHAK829Wto2O
+ 
+ advanced tailwind playlist thirus
+ - https://www.youtube.com/playlist?list=PLrC_WsW4VdT4k3LWVFpTGM4ryYlDnrEvz
+ 
+ 
+ best video for tailwind flexbox - https://www.youtube.com/watch?v=X6FIydgCzzY&list=PLrC_WsW4VdT4k3LWVFpTGM4ryYlDnrEvz&index=4 
+ best video for tailwind grid - https://www.youtube.com/watch?v=kuY9MehvHh4&list=PLrC_WsW4VdT4k3LWVFpTGM4ryYlDnrEvz&index=5
+ best video for tailwind responsive grid - https://www.youtube.com/watch?v=9aQ6nFMsbDs&list=PLrC_WsW4VdT4k3LWVFpTGM4ryYlDnrEvz&index=6
+
+- used to prefer cdn link (do not devlop mode , not requried to install nodejs & tailwind)
+- pratice video no 14, 15 with your laptop
+
+tailwind framwork - (prefer to use tailwindelement)
 (1)tailwindUi
 (2)wickedblock
-(3)tailwindelement
-(4)tailblock
+(3)tailwindelement (free)
+(4)tailblock (free)
 (5)tailcomponents
