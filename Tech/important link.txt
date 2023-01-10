@@ -2,6 +2,12 @@ best respontry
 -- https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code
 -- https://github.com/PsVenom
 
+
+best video tech
+- github guide https://www.youtube.com/watch?v=wMsyck4UyHA&t=801s
+- basic computer architechure - https://www.youtube.com/watch?v=uZpkxZIJH54
+- django good resource - https://www.youtube.com/watch?v=cS8FIKVsjeQ&list=PLLz6Bi1mIXhEhesFwMsfrFfVyxoAOZkPI
+
 resoucre
 Dbms- https://drive.google.com/drive/folders/1f5dmqV84E-BN1PiVWqUhNXzcVWkCbGPa
 java- https://drive.google.com/drive/folders/1IP7B7lhrRq6et72RGUVeLibe8yfvnq9i
