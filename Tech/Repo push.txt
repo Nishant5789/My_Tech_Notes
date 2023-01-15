@@ -10,3 +10,17 @@ git push origin master
 
 ---- directly push your master branch
 git push -f origin master
+
+------check origin staus link---------
+ "$git remote -v"
+myOrigin ssh://git@example.com:1234/myRepo.git (fetch)
+myOrigin ssh://git@example.com:1234/myRepo.git (push)
+
+# this will fail because `origin` is not set
+
+------remove origin ---------
+git remote remove origin
+
+------------how to add origin- & push into master branch----------- 
+set origin using https link(best way) - git remote set-url origin https_link_to_repository
+directly push into mater branch - git push -f origin master
