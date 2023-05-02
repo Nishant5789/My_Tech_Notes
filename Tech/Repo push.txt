@@ -24,3 +24,9 @@ git remote remove origin
 ------------how to add origin- & push into master branch----------- 
 set origin using https link(best way) - git remote set-url origin https_link_to_repository
 directly push into mater branch - git push -f origin master
+
+--------remove files from staging area-----------
+git reset --hard or git reset
+
+-------- create a new branch and swithc into branch---------
+git checkout -b <new-branch-name>
