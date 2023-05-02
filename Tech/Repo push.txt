@@ -40,9 +40,7 @@ git checkout <branch-name>
 git stash apply 
 
 -----------how to delete branch with uncommit file-------
-git stash 
-git checkout <another branch>
-git branch -D <deletbranch>
+don't do please first commit and do
 
 -----------how to delete branch with commit file-------
 git checkout <another branch>
