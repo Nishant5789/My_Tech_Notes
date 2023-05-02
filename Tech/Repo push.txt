@@ -2,7 +2,7 @@ git init
 git remote add origin <gitlint>
 git remote -v
 git add .
-git commit -v "first commit"
+git commit -m "first commit"
 git push origin master
 
 'git status'   -   check the branch detail
@@ -26,7 +26,33 @@ set origin using https link(best way) - git remote set-url origin https_link_to_
 directly push into mater branch - git push -f origin master
 
 --------remove files from staging area-----------
-git reset --hard or git reset
+git reset --hard or git reset (not sure)
 
--------- create a new branch and swithc into branch---------
+-------- create a new branch and switch into branch---------
 git checkout -b <new-branch-name>
+
+-----------swithch to branch after commit------------
+git checkout <branch-name>
+
+-----------switch to branch without commit------------
+git stash
+git checkout <branch-name>
+git stash apply 
+
+-----------how to delete branch with uncommit file-------
+git stash 
+git checkout <another branch>
+git branch -D <deletbranch>
+
+-----------how to delete branch with commit file-------
+git checkout <another branch>
+git branch -d <deletbranch>
+
+-----------how to push nodejs project with our deplay node mouls-------
+touch .gitignore
+git add .
+git commit -m "use gitignore"
+git push origin remotebranch
+
+
+
