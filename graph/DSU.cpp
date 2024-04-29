@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int N = 1000;
+const int N = 1000; 
+// find connected components
+// time complexity : constant
 
 // 5 3
 // 1 0
